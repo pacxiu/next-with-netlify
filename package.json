@@ -11,9 +11,25 @@
   "dependencies": {
     "next": "latest",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "theme-ui": "^0.3.1"
   },
   "devDependencies": {
-    "frontmatter-markdown-loader": "^2.0.0"
+    "@types/node": "^14.0.24",
+    "@types/react": "^16.9.43",
+    "@types/theme-ui": "^0.3.5",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "frontmatter-markdown-loader": "^2.0.0",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
   }
 }

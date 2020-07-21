@@ -1,20 +1,20 @@
-import Link from 'next/link'
-import Layout from '../../components/layout'
+import Link from 'next/link';
+import Layout from 'components/layout';
 
 const importBlogPosts = async () => {
   // https://webpack.js.org/guides/dependency-management/#requirecontext
   const markdownFiles = require
-    .context('../../content/blogPosts', false, /\.md$/)
+    .context('content/blogPosts', false, /\.md$/)
     .keys()
-    .map((relativePath) => relativePath.substring(2))
+    .map((relativePath) => relativePath.substring(2));
 
   return Promise.all(
     markdownFiles.map(async (path) => {
-      const markdown = await import(`../../content/blogPosts/${path}`)
-      return { ...markdown, slug: path.substring(0, path.length - 3) }
+      const markdown = await import(`content/blogPosts/${path}`);
+      return { ...markdown, slug: path.substring(0, path.length - 3) };
     })
-  )
-}
+  );
+};
 
 const Blog = ({ postsList }) => (
   <Layout>
@@ -38,16 +38,16 @@ const Blog = ({ postsList }) => (
       }
     `}</style>
   </Layout>
-)
+);
 
 export async function getStaticProps() {
-  const postsList = await importBlogPosts()
+  const postsList = await importBlogPosts();
 
   return {
     props: {
       postsList,
     }, // will be passed to the page component as props
-  }
+  };
 }
 
-export default Blog
+export default Blog;

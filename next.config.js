@@ -1,9 +1,12 @@
+const path = require('path');
+
 module.exports = {
-  webpack: (configuration) => {
-    configuration.module.rules.push({
+  webpack: (config) => {
+    config.module.rules.push({
       test: /\.md$/,
       use: 'frontmatter-markdown-loader',
-    })
-    return configuration
+    });
+
+    return config;
   },
-}
+};

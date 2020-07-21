@@ -1,5 +1,5 @@
-import Layout from '../components/layout'
-import { attributes, html } from '../content/about.md'
+import Layout from 'components/layout';
+import { attributes, html } from 'content/about.md';
 
 const About = () => (
   <Layout>
@@ -12,6 +12,6 @@ const About = () => (
       }
     `}</style>
   </Layout>
-)
+);
 
-export default About
+export default About;
