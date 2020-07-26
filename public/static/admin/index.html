@@ -4,10 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity.js"></script>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script>
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          netlifyIdentity.init({
+            APIUrl: 'https://hungry-hawking-a1f85f.netlify.app/.netlify/identity',
+          });
+        });
+      } else {
+        netlifyIdentity.init({
+          APIUrl: 'https://hungry-hawking-a1f85f.netlify.app/.netlify/identity',
+        });
+      }
+    </script>
   </body>
 </html>
