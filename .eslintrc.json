@@ -8,7 +8,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["prettier", "@typescript-eslint"],
+  "plugins": ["simple-import-sort", "prettier", "@typescript-eslint", "unused-imports"],
   "parser": "@typescript-eslint/parser",
   "globals": {
     "__NEXT_DATA__": "writeable",
@@ -17,7 +17,27 @@
     "RequestInit": "readable"
   },
   "rules": {
-    "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }],
+    "unused-imports/no-unused-imports-ts": "error",
+    "simple-import-sort/sort": [
+      "error",
+      {
+        "groups": [
+          // Side effect imports.
+          ["^\\u0000"],
+          // Packages.
+          // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+          ["^@?\\w"],
+          // Absolute imports and other imports such as Vue-style `@/foo`.
+          // Anything that does not start with a dot.
+          ["^[^.]"],
+          // Relative imports.
+          // Anything that starts with a dot.
+          // anything that stars with /src (out custom path)
+          ["(^\\.|src/)"]
+        ]
+      }
+    ],
+    "arrow-parens": [0, "as-needed", { "requireForBlockBody": true }],
     "class-methods-use-this": 0,
     "consistent-return": 0,
     "max-len": 0,
@@ -66,7 +86,10 @@
       }
     ],
     "@typescript-eslint/explicit-module-boundary-types": 0,
-    "@typescript-eslint/ban-ts-comment": 0
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "no-use-before-define": 0
   },
   "settings": {
     "import/resolver": {

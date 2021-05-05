@@ -1,4 +1,4 @@
-import Layout from 'components/layout';
+import Layout from 'components/Layout';
 import { attributes, html } from 'content/home.md';
 import { Box, Button, Heading } from 'theme-ui';
 

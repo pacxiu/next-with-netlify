@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "paths": {
-      "components/*": ["src/components/*"],
-      "pages/*": ["src/pages/*"]
-    },
+    "baseUrl": "./src",
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es2017",
@@ -21,7 +17,9 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "jsx": "preserve",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
